@@ -1,8 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.css';
+
 function App() {
 
   return (
    <div>
-      <span>Hello World</span>
+      <span className="">Hello World</span>
    </div>
   )
 }
