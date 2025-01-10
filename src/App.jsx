@@ -4,6 +4,9 @@ import DefaultLayout from '../layout/DefaultLayout';
 import HomePage from '../pages/HomePage';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import MoviePage from '../pages/movies/MoviePage';
+import './index.css'
+
 
 function App() {
 
@@ -12,6 +15,8 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route path='/' element={<HomePage />} />
+          <Route path='/movies/:id' element={<MoviePage />} />
+{/* NON NECESSARIO PER L'ESERCIZIO, MA PER RENDERLO PIU COMPLETO  */}
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
         </Route>

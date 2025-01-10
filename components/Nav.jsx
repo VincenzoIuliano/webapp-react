@@ -2,19 +2,19 @@ import { NavLink } from 'react-router-dom'
 
 function Nav() {
     return (
-        <nav>
+        <nav className='d-flex justify-content-end container-xxl gap-3'>
             <li>
-                <NavLink to="/">
+                <NavLink className='p-2' to="/">
                     Homepage
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/contact">
+                <NavLink className='p-2' to="/contact">
                     Contatti
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/about">
+                <NavLink className='p-2' to="/about">
                     About
                 </NavLink>
             </li>

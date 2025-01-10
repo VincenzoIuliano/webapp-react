@@ -1,0 +1,40 @@
+/* RESET RULES  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+ul, ol, li {
+    list-style: none;
+  }
+  
+a {
+    text-decoration: none;
+    color: currentColor;
+  }
+  
+img {
+    max-width: 100%;
+  }
+
+/* PAGES */
+
+main {
+    background-color: rgb(184, 199, 226);
+}
+
+.active {
+    color: black;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 10px;
+}
