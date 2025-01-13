@@ -6,7 +6,7 @@ function MovieCard({ movie }) {
     
     return (
       <>
-        <div className="border rounded-top w-50">
+        <div className="border rounded-top w-50 col-4">
           <figure>
             <img src={image} alt="" className=" img-thumbnail" />
           </figure>
