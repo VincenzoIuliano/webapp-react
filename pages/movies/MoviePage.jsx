@@ -22,31 +22,39 @@ function MoviePage() {
         fetchMovie();
     },[id]);
 
-    return (
-        movie ? (<>
-            <section>
-                <div>
-                    <h1>{movie?.title}</h1>
-                </div>
-                <div>
-                    <h2>{movie?.director}</h2>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <h2>{movie?.abstract}</h2>
-                </div>
-            </section>
-            { /* RECENSIONI  */ }
-            
-               <ul className="container">
-                    {movie.reviews.map(review => (
-                        <ReviewCard review={review} key={review.id} />
-                    ))  }
-               </ul> 
-             
-        </>) : <div>Nessun film presente in archivio</div>
-    )
+    return movie ? (
+      <>
+        <section className="container m-3">
+          <div>
+            <h1>{movie?.title}</h1>
+          </div>
+          <div>
+            <img
+              className="w-50 rounded"
+              src={`http://localhost:3000/movies_cover/${movie.image}`}
+              alt=""
+            />
+          </div>
+          <div>
+            <h2>{movie?.director}</h2>
+          </div>
+        </section>
+        <section className="container m-3">
+          <div>
+            <h2>{movie?.abstract}</h2>
+          </div>
+        </section>
+        {/* RECENSIONI  */}
+        <h3 className="container">RECENSIONI</h3>
+        <ul>
+          {movie.reviews.map((review) => (
+            <ReviewCard review={review} key={review.id} />
+          ))}
+        </ul>
+      </>
+    ) : (
+      <div>Nessun film presente in archivio</div>
+    );
 }
 
 export default MoviePage;

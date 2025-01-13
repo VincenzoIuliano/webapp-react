@@ -3,10 +3,12 @@ function ReviewCard({review}) {
     const { name, vote, text} = review;
     
     return (
-        <div>
-            <p>{text}</p>
+        <div className="border m-2">
             <div>
-                <strong>{vote}</strong>
+                <p>{text}</p>
+            </div>
+            <div>
+                <strong>Voto: {vote}</strong>
             </div>
             <div>
                 By  {name}
