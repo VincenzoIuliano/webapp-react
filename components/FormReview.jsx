@@ -30,7 +30,7 @@ function FormReview ({ id }) {
         e.preventDefault()
         console.log('Review salvata');
         
-        axios.post(`http://localhost:3000/api/movies/${id}/reviews`, formData)
+        axios.post(`http://localhost:3000/api/movies/${id}/reviews`,formData)
         .then(res => {
             console.log(res);   
         }).catch((err) => {
@@ -44,7 +44,7 @@ function FormReview ({ id }) {
             <label for="name">Nome</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="name"
               id="name"
               placeholder="Inserisci il tuo nome"
@@ -56,7 +56,7 @@ function FormReview ({ id }) {
             <label for="Testo">Testo della recensione</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="text"
               placeholder="Inserisci qui il testo della tua recensione"
               id="text"

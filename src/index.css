@@ -38,3 +38,12 @@ main {
     flex-grow: 1;
     padding-top: 10px;
 }
+
+.loader {
+  background-color: rgb(184, 199, 226, 0.8) ;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  animation: infinite;
+}
