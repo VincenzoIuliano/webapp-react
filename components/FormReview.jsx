@@ -1,13 +1,55 @@
-function FormReview () {
+import { useState } from "react"
+import axios from "axios"
+
+const initialFormData = {
+    name: '',
+    text: '',
+    vote: 1
+}
+
+function FormReview ({ id }) {
+    
+    const [formData, setFormData] = useState(initialFormData)
+
+    function onFormChange(e) {
+        const {value , name} = e.target
+        console.log(value, name);
+
+        const newFormData = {
+            ...formData
+        }
+        newFormData[name] = value
+
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
+
+    function storeReview(e) {
+        e.preventDefault()
+        console.log('Review salvata');
+        
+        axios.post(`http://localhost:3000/api/movies/${id}/reviews`, formData)
+        .then(res => {
+            console.log(res);   
+        }).catch((err) => {
+            console.error(err)
+        })
+    }
+    
     return <>
-     <form className="container mb-3">
+     <form onSubmit={storeReview} className="container mb-3">
           <div className="m-2">
-            <label for="Nome">Nome</label>
+            <label for="name">Nome</label>
             <input
               type="text"
               class="form-control"
+              name="name"
               id="name"
               placeholder="Inserisci il tuo nome"
+              value={formData.name}
+              onChange={onFormChange}
             ></input>
           </div>
           <div className="m-2">
@@ -18,13 +60,14 @@ function FormReview () {
               name="text"
               placeholder="Inserisci qui il testo della tua recensione"
               id="text"
+              value={formData.text}
+              onChange={onFormChange}
             />
           </div>
           <div className="m-2">
             <label for="Voto">Voto della tua recensione: </label>
-            <select class="custom-select" id="vote">
-              <option selected>Scegli il voto che vuoi dare alla tua recensione</option>
-              <option value="1">1</option>
+            <select id="vote" name="vote" value={formData.vote} onChange={onFormChange}>
+              <option defaultValue="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>

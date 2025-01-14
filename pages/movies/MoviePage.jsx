@@ -52,7 +52,7 @@ function MoviePage() {
             <ReviewCard review={review} key={review.id} />
           ))}
         </ul>
-        <FormReview />
+        <FormReview id={id} />
       </>
     ) : (
       <div>Nessun film presente in archivio</div>
